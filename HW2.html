@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Угадай число</title>
+
+	<style type="text/css">
+
+                #container {
+                        width: 250px;
+                        margin-top: 20%;
+                        border: 3px solid grey;
+                        padding: 40px;
+                        text-align: center;
+                        background-color: orange;
+                        left: 35%;
+                        position: relative;
+                }
+
+                #info, #out {
+                        color: blue;
+                        margin-bottom: 20px;
+                }
+
+                input[type="number"], input[type="button"]  {
+                        height: 30px;
+                        font-size: 24px;
+                        width: 50px;
+                        text-align: center;
+                        margin-bottom: 20px;
+
+
+        </style>
+</head>
+<body>
+	<div id="container">
+		<p id="info">Угадай число</p>
+		<p><input type="number" id="addNum">Введите число от 1 до 10</p>
+		<p id="bat"><button onclick="fgues()" onclick="outTry()">Угадать</button></p>
+		<p id="out"></p>
+		<p id="outTry"></p>
+
+		<script type="text/javascript">
+			var progrNam;
+			progrNam = Math.floor((Math.random() * 10) + 1);
+			
+				/*outTry.innerHTML = progrNam;
+			for(var i = 0; i<5; i++) {
+				outTry.innerHTML = 'У Вас осталось 4 попытки'
+			}*/
+				
+				function fgues(){
+				var inputNum, out;
+				inputNum = document.getElementById('addNum') .value;
+				out = document.getElementById('out');
+				
+				if (inputNum == progrNam) {
+				out.innerHTML = 'Вы угадали';
+				}
+				else if (inputNum > progrNam) {
+				out.innerHTML = 'Ваше число больше чем загаданное';
+				}
+				else {
+				out.innerHTML = 'Ваше число меньше чем загаданное';
+				}
+				}
+				
+				/*Не получилось =(
+				function outTry(){
+				var outTry
+				outTry = document.getElementById('outTry');
+
+				var i = 0;
+				while (i<5) {
+				outTry.innerHTML+="У Вас осталось"i+" попыток";
+					i--;
+				}		
+				}*/
+
+
+
+		</script>
+	</div>
+
+</body>
+</html>
